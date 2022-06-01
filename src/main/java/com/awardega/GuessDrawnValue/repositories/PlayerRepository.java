@@ -12,7 +12,7 @@ public interface PlayerRepository {
     @Query("SELECT TOP 10 p FROM Players p ORDER BY p.numberOfTries DESC")
     List<Player> players();
 
-    @Query("SELCET p FROM Players WHERE p.id = ?1")
-    List<Player> player(Long id);
+    @Query("SELECT p FROM Players WHERE p.id = ?1")
+    List<Player> playerById(Long id);
 }
 

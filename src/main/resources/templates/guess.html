@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start Page</title>
+    <meta name="author" content="Agnieszka Wardęga">
+    <meta name="description" content="A simple web game called Guess the drawn number, where the user guesses the number from 1 to 100.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+            input[type=submit] {
+                background-color: yellowgreen;
+                border: 2px;
+                border-color: yellow;
+                color: blue;
+                padding: 8px 16px;
+                text-decoration: none;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+            h3{
+                color: palegreen;
+            }
+        </style>
+</head>
+<body>
+    <form method="get" action="/guess/guessNumber">
+        <input type="number" min="1" max="100" id="guessNumber">
+        <input type="submit" value="Guess!">
+    </form>
+</body>
+</html>
