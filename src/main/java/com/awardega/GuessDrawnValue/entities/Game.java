@@ -20,18 +20,6 @@ public class Game {
         return drawvalue;
     }
 
-    public int getValueFunction(Scanner scanner, PrintStream out){
-        out.println("Enter a number from 1 to 100: ");
-        guessvalue = scanner.nextInt();
-
-        while (guessvalue < 1 || guessvalue > 100){
-            out.println("An out-of-range number was specified! \nEnter a number from 1 to 100: ");
-            guessvalue = scanner.nextInt();
-        }
-
-        return guessvalue;
-    }
-
     public boolean guessedOrNot(int drawvalue, int guessvalue){
         boolean result;
 

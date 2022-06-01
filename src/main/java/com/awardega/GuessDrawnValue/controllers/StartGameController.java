@@ -12,6 +12,7 @@ public class StartGameController {
 
     @GetMapping("/start")
     public String startGamePage() {
+        player.getId();
         return "start";
     }
 }

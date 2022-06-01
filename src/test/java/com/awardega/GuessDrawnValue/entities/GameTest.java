@@ -4,8 +4,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.PrintStream;
-import java.util.Scanner;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GameTest {
@@ -59,15 +57,6 @@ class GameTest {
     void drawFunction() {
         int drawValue = game.drawFunction();
         assertEquals(drawValue, game.getDrawvalue());
-    }
-
-    @Test
-    void getValueFunction() {
-        PrintStream output = new PrintStream(System.out);
-        String input = "101\n"
-                + "10\n";
-
-        assertEquals(10, game.getValueFunction(new Scanner(input), new PrintStream(output)));
     }
 
     @Test

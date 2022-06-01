@@ -26,6 +26,5 @@ class HomeControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(view().name("home"))
                 .andExpect(content().string(containsString("Do you want to play a game?")));
-
     }
 }
