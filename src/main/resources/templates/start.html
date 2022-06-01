@@ -23,9 +23,9 @@
         </style>
 </head>
 <body>
-<h3>Your id: </h3>
-<form method="get" action="/guess">
-    <input type="submit" value="Start Game">
-</form>
+    <h3>Your id: </h3>
+    <form method="get" action="/guess/th:value={player.getId()}">
+        <input type="submit" value="Start Game">
+    </form>
 </body>
 </html>

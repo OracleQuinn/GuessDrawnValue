@@ -12,12 +12,12 @@ public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private String id;
 
     @Column(name = "NUMBER_OF_TRIES", unique = false)
     private Integer numberOfTries = 0;
 
-    public Player(Long id, Integer numberOfTries){
+    public Player(String id, Integer numberOfTries){
         this.id = id;
         this.numberOfTries = numberOfTries;
     }
