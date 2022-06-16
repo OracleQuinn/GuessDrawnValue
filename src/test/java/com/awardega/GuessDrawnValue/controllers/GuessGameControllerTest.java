@@ -42,24 +42,24 @@ class GuessGameControllerTest {
     void getPlayerTest() throws Exception {
 
         this.mockMvc
-                .perform(get("/GuessNumberGame/start/JoeDoe"))
+                .perform(get("/start/startGame/JoeDoe"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.nick").value("JoeDoe"))
-                .andExpect(jsonPath("$.attempt").value(1));
+                .andExpect(jsonPath("$.id").value("JoeDoe"))
+                .andExpect(jsonPath("$.numberOfTries").value(1));
     }
 
     @Test
     void addNewPlayerTest() throws Exception {
 
         this.mockMvc
-                .perform(post("/GuessNumberGame/start")
+                .perform(post("/start/startGame")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(asJsonString(gameService.getPlayer("AgnieszkaWardega"))))
                 .andExpect(status().isCreated());
 
-        assertThat(gameService.getPlayer("matmed").getId()).isEqualTo("AgnieszkaWardega");
+        assertThat(gameService.getPlayer("AgnieszkaWardega").getId()).isEqualTo("AgnieszkaWardega");
     }
 
 
@@ -67,7 +67,7 @@ class GuessGameControllerTest {
     void startingGameTest() throws Exception {
 
         this.mockMvc
-                .perform(get("/GuessNumberGame/guess/AgnieszkaWardega/89"))
+                .perform(get("/start/guessGame/AgnieszkaWardega/89"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("text/plain;charset=UTF-8"));
