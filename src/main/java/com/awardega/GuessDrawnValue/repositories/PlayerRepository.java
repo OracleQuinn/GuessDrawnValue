@@ -1,18 +1,19 @@
 package com.awardega.GuessDrawnValue.repositories;
 
 import com.awardega.GuessDrawnValue.entities.Player;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
+import java.util.*;
 
-import java.util.List;
+@Data
+@RequiredArgsConstructor
+@Component
+public class PlayerRepository {
+    private static final List<Player> playerList = new ArrayList<>();
 
-@Repository
-public interface PlayerRepository {
-
-    @Query("SELECT TOP 10 p FROM Players p ORDER BY p.numberOfTries DESC")
-    List<Player> players();
-
-    @Query("SELECT p FROM Players WHERE p.id = ?1")
-    List<Player> playerById(Long id);
+    public List<Player> getPlayerList(){
+        return playerList;
+    }
 }
 
