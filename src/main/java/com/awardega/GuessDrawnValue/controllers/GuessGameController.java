@@ -15,8 +15,8 @@ public class GuessGameController {
     GameServiceImpl gameService;
 
     @GetMapping("game/{nick}")
-    public ResponseEntity<Player> getPlayer(@PathVariable String nick) {
-        return ResponseEntity.ok(gameService.getPlayer(nick));
+    public ResponseEntity<Player> getPlayer(@PathVariable String id) {
+        return ResponseEntity.ok(gameService.getPlayer(id));
     }
 
     @PostMapping("game")
@@ -25,8 +25,8 @@ public class GuessGameController {
     }
 
     @GetMapping("guess/{nick}/{number}")
-    public ResponseEntity<String> startingGame(@PathVariable String nick, @PathVariable Integer number) {
-        return ResponseEntity.ok(gameService.startingGame(nick, number));
+    public ResponseEntity<String> startingGame(@PathVariable String id, @PathVariable Integer number) {
+        return ResponseEntity.ok(gameService.startingGame(id, number));
     }
     @GetMapping("best10")
     public ResponseEntity<List<Player>> getBest10() {

@@ -18,9 +18,7 @@ public class Player {
 
     @Override
     public String toString(){
-        return "Player{" +
-                "id" + id +
-                ", numberOfTries = " + numberOfTries +
-                '}';
+        return "Player id: " + id +
+                ", numberOfTries = " + numberOfTries;
     }
 }
