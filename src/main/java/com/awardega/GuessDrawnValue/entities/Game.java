@@ -3,9 +3,8 @@ package com.awardega.GuessDrawnValue.entities;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-import java.io.PrintStream;
+import java.util.Objects;
 import java.util.Random;
-import java.util.Scanner;
 
 @Data
 @RequiredArgsConstructor

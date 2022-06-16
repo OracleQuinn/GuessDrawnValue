@@ -14,17 +14,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @WebMvcTest(StartGameController.class)
 class StartGameControllerTest {
-
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    void startGamePage() throws Exception{
+    public void startPageTest() throws Exception{
         this.mockMvc
                 .perform(get("/start"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("start"))
-                .andExpect(content().string(containsString("Your id: ")));
+                .andExpect(content().string(containsString("Simple instruction below")));
     }
 }
