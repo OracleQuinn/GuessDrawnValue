@@ -6,6 +6,7 @@
 ### PREREQUISITES: 
 1. IDE that allows you to open a file with the code or copy the repository - *Intelliji Idea* recommended.
 2. Api Client - *Insomnia* recommended.
+3. Java 11
 
 ### SETUP:
 1. Download the zip file or clone the https repository using the git clone command.
