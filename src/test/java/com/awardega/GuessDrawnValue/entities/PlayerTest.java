@@ -27,16 +27,6 @@ class PlayerTest {
     }
 
     @Test
-    void testToString() {
-        String id = "JoeDoe";
-        int noOfTries = 5;
-        String result = "Player id: " + id +
-                ", numberOfTries = " + noOfTries;
-
-        assertEquals(result, "Player id: JoeDoe, numberOfTries = 5");
-    }
-
-    @Test
     void getId() {
         player.setId("AlaMaKota");
         assertTrue(player.getId() == "AlaMaKota");

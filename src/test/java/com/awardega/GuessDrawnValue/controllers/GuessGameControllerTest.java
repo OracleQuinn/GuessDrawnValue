@@ -1,7 +1,7 @@
 package com.awardega.GuessDrawnValue.controllers;
 
 import com.awardega.GuessDrawnValue.entities.Player;
-import com.awardega.GuessDrawnValue.services.GameServiceImpl;
+import com.awardega.GuessDrawnValue.services.GameService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -25,7 +25,7 @@ class GuessGameControllerTest {
     MockMvc mockMvc;
 
     @Autowired
-    GameServiceImpl gameService;
+    GameService gameService;
 
     @BeforeEach
     public void setUp() {
