@@ -21,6 +21,6 @@
 
 ![img_4.png](img_4.png)
 
-6. While the file is running, select *Home Page* and click *SEND*.
+6. While the application is running, select *Home Page* and click *SEND*.
 
 ![img_5.png](img_5.png)
