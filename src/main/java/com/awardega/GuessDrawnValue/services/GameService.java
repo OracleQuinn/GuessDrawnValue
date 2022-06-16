@@ -16,6 +16,11 @@ public class GameService {
 
     Game startGame = new Game();
 
+    /**
+     * The method checks if the player with the given ID already exists. Method for creating a new player.
+     * @param player
+     * @return newPlayer
+     */
     public Player addNewPlayer(Player player){
         Player newPlayer = new Player();
         newPlayer.setId(player.getId());
@@ -31,10 +36,19 @@ public class GameService {
         return newPlayer;
     }
 
+    /**
+     * A method that returns a list of all players
+     * @return listOfPlayers
+     */
     public List<Player> getAllPlayers() {
         return listOfPlayers;
     }
 
+    /**
+     * Player return method
+     * @param id
+     * @return player
+     */
     public Player getPlayer(String id) {
         return Optional.of(playerRepository.getPlayerList()
                         .stream()
@@ -44,6 +58,12 @@ public class GameService {
                 .orElse(null);
     }
 
+    /**
+     * A method that returns information about the result of the round.
+     * @param id
+     * @param guessNumber
+     * @return result
+     */
     public String startingGame(String id, int guessNumber){
         Player player = getPlayer(id);
 
@@ -67,6 +87,13 @@ public class GameService {
         return result;
     }
 
+    /**
+     * A method to check if the player has guessed the number,
+     * returning information as to whether the player succeeded, otherwise what went wrong.
+     * @param secretNumber
+     * @param guessNumber
+     * @return message
+     */
     public String verifyGuess(int secretNumber, int guessNumber){
         String message = null;
         boolean gameResult;
@@ -83,6 +110,11 @@ public class GameService {
         return message;
     }
 
+
+    /**
+     * Method that returns a list of the 10 players with the fewest attempts.
+     * @return listOfWinners
+     */
     public List<Player> best10Players(){
         return listOfWinners.stream()
                 .sorted(Comparator.comparingInt(Player::getNumberOfTries))
