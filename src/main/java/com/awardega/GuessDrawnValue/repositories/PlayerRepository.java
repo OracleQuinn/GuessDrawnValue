@@ -12,6 +12,10 @@ import java.util.*;
 public class PlayerRepository {
     private static final List<Player> playerList = new ArrayList<>();
 
+    /**
+     * A method that returns a list of players.
+     * @return
+     */
     public List<Player> getPlayerList(){
         return playerList;
     }

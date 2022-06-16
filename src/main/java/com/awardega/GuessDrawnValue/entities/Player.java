@@ -12,6 +12,9 @@ public class Player {
     private int numberOfTries = 0;
     private int numberToGuess = 0;
 
+    /**
+     * A method for increasing the number of player attempts.
+     */
     public void updateNoTries(){
         numberOfTries++;
     }
