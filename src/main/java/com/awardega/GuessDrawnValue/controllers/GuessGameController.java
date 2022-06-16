@@ -1,7 +1,7 @@
 package com.awardega.GuessDrawnValue.controllers;
 
 import com.awardega.GuessDrawnValue.entities.Player;
-import com.awardega.GuessDrawnValue.services.GameServiceImpl;
+import com.awardega.GuessDrawnValue.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +12,7 @@ import java.util.List;
 @RequestMapping(path = "/")
 public class GuessGameController {
     @Autowired
-    GameServiceImpl gameService;
+    GameService gameService;
 
     @GetMapping("game/{nick}")
     public ResponseEntity<Player> getPlayer(@PathVariable String id) {
@@ -28,10 +28,4 @@ public class GuessGameController {
     public ResponseEntity<String> startingGame(@PathVariable String id, @PathVariable Integer number) {
         return ResponseEntity.ok(gameService.startingGame(id, number));
     }
-    @GetMapping("best10")
-    public ResponseEntity<List<Player>> getBest10() {
-
-        return ResponseEntity.ok(gameService.get10BestPlayers());
-    }
-
 }

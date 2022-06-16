@@ -15,10 +15,4 @@ public class Player {
     public void updateNoTries(){
         numberOfTries++;
     }
-
-    @Override
-    public String toString(){
-        return "Player id: " + id +
-                ", numberOfTries = " + numberOfTries;
-    }
 }
