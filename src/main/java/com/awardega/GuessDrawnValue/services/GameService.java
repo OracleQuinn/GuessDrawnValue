@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 public class GameService {
     PlayerRepository playerRepository  = new PlayerRepository();
     List<Player> listOfPlayers = playerRepository.getPlayerList();
+    List<Player> listOfWinners = playerRepository.getPlayerList();
 
     Game startGame = new Game();
 
@@ -21,7 +22,7 @@ public class GameService {
 
         for (Player gamer : listOfPlayers) {
             if (newPlayer.getId().equals(gamer.getId())) {
-                System.out.println("ERROR! This id is registred!");
+                System.out.println("ERROR! This id is registered!");
                 return null;
             }
         }
@@ -57,6 +58,7 @@ public class GameService {
         if(result == "Congratulations! You win!"){
             player.updateNoTries();
             player.setNumberToGuess(0);
+            listOfWinners.add(player);
         }
         else {
             player.updateNoTries();
@@ -82,7 +84,7 @@ public class GameService {
     }
 
     public List<Player> best10Players(){
-        return listOfPlayers.stream()
+        return listOfWinners.stream()
                 .sorted(Comparator.comparingInt(Player::getNumberOfTries))
                 .limit(10)
                 .collect(Collectors.toList());
